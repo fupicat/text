@@ -35,14 +35,16 @@
         document.querySelector('game-app').$keyboard.$keyboard.querySelector(`button[data-key='${letter}']`).click()
       }
       document.querySelector('game-app').$keyboard.$keyboard.querySelector(`button[data-key='↵']`).click()
+      
+      let evaluations = JSON.parse(localStorage["nyt-wordle-state"]).evaluations[attempt]
 
       await timeout(2000);
 
-      feedback.push(states[document.querySelector('game-app').$board.querySelectorAll('game-row')[attempt].$tiles[0].$tile.dataset.state])
-      feedback.push(states[document.querySelector('game-app').$board.querySelectorAll('game-row')[attempt].$tiles[1].$tile.dataset.state])
-      feedback.push(states[document.querySelector('game-app').$board.querySelectorAll('game-row')[attempt].$tiles[2].$tile.dataset.state])
-      feedback.push(states[document.querySelector('game-app').$board.querySelectorAll('game-row')[attempt].$tiles[3].$tile.dataset.state])
-      feedback.push(states[document.querySelector('game-app').$board.querySelectorAll('game-row')[attempt].$tiles[4].$tile.dataset.state])
+      feedback.push(states[evaluations[0]]);
+      feedback.push(states[evaluations[1]]);
+      feedback.push(states[evaluations[2]]);
+      feedback.push(states[evaluations[3]]);
+      feedback.push(states[evaluations[4]]);
 
       console.log(feedback.toString());
     
