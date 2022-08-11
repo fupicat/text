@@ -1,3 +1,5 @@
+# Doesn't work anymore, don't really care to fix it :/
+
 # wordle-cheat
 
 Bot for [Wordle](https://www.powerlanguage.co.uk/wordle/) that automatically guesses the word correctly 88.4% of the time without knowing the answer.
